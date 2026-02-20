@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio_Dev | Premium Digital Architecture</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bg: '#000000',
+                        card: '#0A0A0A',
+                        accent: '#FFFFFF',
+                        border: '#1F1F1F',
+                        muted: '#707070',
+                    },
+                    fontFamily: {
+                        sans: ['Geist', 'Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/fonts/geist-sans/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <style>
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* The Glow Effect */
+        .bento-card {
+            position: relative;
+            background: #0A0A0A;
+            border: 1px solid #1F1F1F;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            overflow: hidden;
+        }
+
+        .bento-card:hover {
+            border-color: #404040;
+            background: #0D0D0D;
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+        }
+
+        .bento-card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(255,255,255,0.08), transparent 40%);
+            opacity: 0;
+            transition: opacity 0.5s;
+            pointer-events: none;
+        }
+
+        .bento-card:hover::after {
+            opacity: 1;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        ::selection {
+            background: #ffffff;
+            color: #000000;
+        }
+
+        /* Smooth image zoom */
+        .project-img {
+            transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+    </style>
+</head>
+<body class="selection:bg-accent selection:text-bg">
+
+    <nav class="fixed top-0 w-full z-50 border-b border-border bg-bg/80 backdrop-blur-md">
+        <div class="max-w-[1400px] mx-auto px-6 h-16 flex justify-between items-center">
+            <div class="text-sm font-bold tracking-tighter uppercase">Studio<span class="text-muted">_</span>Dev</div>
+            <div class="flex gap-8 text-[11px] font-medium uppercase tracking-widest text-muted">
+                <a href="#services" class="hover:text-white transition-colors">Services</a>
+                <a href="#work" class="hover:text-white transition-colors">Work</a>
+                <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-[1400px] mx-auto px-6 pt-32 pb-20">
+        
+        <header class="mb-24 reveal">
+            <h1 class="text-5xl md:text-8xl font-bold tracking-tighter leading-none mb-8">
+                PREMIUM DIGITAL <br>
+                <span class="text-muted">ARCHITECTURE.</span>
+            </h1>
+            <p class="text-muted text-lg md:text-xl max-w-2xl font-light leading-relaxed">
+                Specializing in high-performance web systems and aesthetic engineering for brands that refuse to look average.
+            </p>
+        </header>
+
+        <section id="services" class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-32">
+            
+            <div class="md:col-span-2 bento-card rounded-3xl p-8 md:p-12 reveal">
+                <div class="flex flex-col h-full justify-between">
+                    <div>
+                        <i class='bx bx-code-alt text-3xl mb-6'></i>
+                        <h2 class="text-3xl font-bold mb-4">Custom Web Development</h2>
+                        <p class="text-muted max-w-md">Scalable, lightning-fast web applications built with Next.js, TypeScript, and modern headless architectures.</p>
+                    </div>
+                    <div class="mt-12 flex gap-3 flex-wrap">
+                        <span class="text-[10px] border border-border px-3 py-1 rounded-full uppercase tracking-widest">Next.js</span>
+                        <span class="text-[10px] border border-border px-3 py-1 rounded-full uppercase tracking-widest">Three.js</span>
+                        <span class="text-[10px] border border-border px-3 py-1 rounded-full uppercase tracking-widest">AWS</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bento-card rounded-3xl p-8 reveal">
+                <div class="flex flex-col h-full">
+                    <span class="text-[10px] text-muted uppercase tracking-[0.2em] mb-4">Entry System</span>
+                    <h3 class="text-4xl font-bold mb-2">€400</h3>
+                    <p class="text-muted text-sm mb-8">Rapid deployment landing page.</p>
+                    <hr class="border-border mb-8">
+                    <ul class="space-y-4 text-sm text-muted flex-grow">
+                        <li><i class='bx bx-check mr-2 text-white'></i> Design & Dev</li>
+                        <li><i class='bx bx-check mr-2 text-white'></i> Responsive Layout</li>
+                        <li><i class='bx bx-check mr-2 text-white'></i> 5-Day Delivery</li>
+                    </ul>
+                    <a href="#contact" class="mt-8 block text-center py-4 bg-white text-black text-xs font-bold uppercase rounded-2xl hover:bg-zinc-200 transition-colors">Start Project</a>
+                </div>
+            </div>
+
+            <div class="bento-card rounded-3xl p-8 bg-white text-black border-none reveal">
+                <div class="flex flex-col h-full">
+                    <span class="text-[10px] opacity-60 uppercase tracking-[0.2em] mb-4">Growth System</span>
+                    <h3 class="text-4xl font-bold mb-2">€900</h3>
+                    <p class="opacity-60 text-sm mb-8">Bespoke multi-page experiences.</p>
+                    <hr class="border-black/10 mb-8">
+                    <ul class="space-y-4 text-sm font-medium flex-grow">
+                        <li><i class='bx bx-check-double mr-2'></i> CMS Integration</li>
+                        <li><i class='bx bx-check-double mr-2'></i> Custom Animations</li>
+                        <li><i class='bx bx-check-double mr-2'></i> SEO Strategy</li>
+                    </ul>
+                    <a href="#contact" class="mt-8 block text-center py-4 bg-black text-white text-xs font-bold uppercase rounded-2xl hover:bg-zinc-800 transition-colors">Select Plan</a>
+                </div>
+            </div>
+
+            <div class="bento-card rounded-3xl p-8 reveal">
+                <h3 class="text-xl font-bold mb-4">Performance First</h3>
+                <p class="text-muted text-sm">Every site I build scores 95+ on Google Lighthouse. Speed isn't a feature; it's a requirement.</p>
+            </div>
+
+            <div class="bento-card rounded-3xl p-8 reveal">
+                <h3 class="text-xl font-bold mb-4">SEO Ready</h3>
+                <p class="text-muted text-sm">Semantic HTML5 and metadata optimization included in every package by default.</p>
+            </div>
+
+        </section>
+
+        <section id="work" class="mb-32 pt-16">
+            <div class="mb-12 reveal">
+                <h2 class="text-3xl md:text-5xl font-bold tracking-tighter mb-4">SELECTED WORK</h2>
+                <p class="text-muted text-sm">Recent digital platforms and aesthetic engineering.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                
+                <a href="https://example.com/project-izdiar" target="_blank" rel="noopener noreferrer" class="bento-card rounded-3xl p-4 reveal group block">
+                    <div class="aspect-[4/3] w-full rounded-2xl bg-border mb-6 overflow-hidden relative">
+                        <img src="p1.jpg" alt="Project Alpha" class="project-img w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105">
+                    </div>
+                    <div class="px-4 pb-4">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-2xl font-bold group-hover:text-accent transition-colors">Izdiar</h3>
+                            <i class='bx bx-up-arrow-alt rotate-45 text-2xl text-muted group-hover:text-white transition-colors duration-300'></i>
+                        </div>
+                        <p class="text-muted text-sm mb-6">A high-performance financial dashboard with real-time data visualization and secure auth flows.</p>
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="text-[10px] border border-border px-3 py-1 rounded-full uppercase tracking-widest text-muted group-hover:border-muted transition-colors">React</span>
+                            <span class="text-[10px] border border-border px-3 py-1 rounded-full uppercase tracking-widest text-muted group-hover:border-muted transition-colors">Node.js</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://amaliwaa.github.io/" target="_blank" rel="noopener noreferrer" class="bento-card rounded-3xl p-4 reveal group block delay-100">
+    <div class="aspect-[4/3] w-full rounded-2xl bg-border mb-6 overflow-hidden relative">
+        <img src="p2.jpg" 
+             alt="My Art Portfolio" 
+             class="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out">
+    </div>
+    <div class="px-4 pb-4">
+        <div class="flex justify-between items-start mb-2">
+            <h3 class="text-2xl font-bold group-hover:text-accent transition-colors">My Art Portfolio</h3>
+            <i class='bx bx-up-arrow-alt rotate-45 text-2xl text-muted group-hover:text-white transition-colors duration-300'></i>
+        </div>
+        <p class="text-muted text-sm mb-6">Headless e-commerce architecture engineered for a premium streetwear brand.</p>
+        <div class="flex gap-2 flex-wrap">
+            <span class="text-[10px] border border-border px-3 py-1 rounded-full uppercase tracking-widest text-muted group-hover:border-muted transition-colors">Next.js</span>
+            <span class="text-[10px] border border-border px-3 py-1 rounded-full uppercase tracking-widest text-muted group-hover:border-muted transition-colors">Shopify</span>
+        </div>
+    </div>
+</a>
+
+            </div>
+        </section>
+
+        <section id="contact" class="border-t border-border pt-24 reveal">
+            <div class="flex flex-col md:flex-row justify-between items-start gap-12">
+                <div class="max-w-xl">
+                    <h2 class="text-4xl md:text-6xl font-bold tracking-tighter mb-8">READY TO UPGRADE?</h2>
+                    <p class="text-muted text-lg mb-8">Stop settling for templates. Let's build a custom engine for your business.</p>
+                    <a href="mailto:aty.munca@gmail.com" class="text-2xl md:text-4xl font-medium border-b border-border hover:border-white transition-all pb-2">aty.munca@gmail.com</a>
+                </div>
+                    <a href="https://t.me/Aodhvn" class="social-btn telegram"><i class="fa-brands fa-telegram"></i><span>Telegram</span></a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="p-12 text-center text-[10px] text-muted font-medium uppercase tracking-[0.4em]">
+        © 2026 Developed with focus
+    </footer>
+
+    <script>
+        // Mouse Move Effect for Cards
+        const cards = document.querySelectorAll(".bento-card");
+        document.addEventListener("mousemove", (e) => {
+            cards.forEach((card) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty("--mouse-x", `${x}px`);
+                card.style.setProperty("--mouse-y", `${y}px`);
+            });
+        });
+
+        // Intersection Observer for Scroll Animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
